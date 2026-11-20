@@ -34,6 +34,12 @@
     object-fit: cover;
 }
 
+.card-img-top.nutrition-card-img{
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
 p {
     text-align: justify;
     line-height: 1.7;
