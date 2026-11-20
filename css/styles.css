@@ -1,35 +1,126 @@
-.hero{
-    background-image: url('/Img/Hero.jpg');
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #212529;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #ffc107;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.hero {
+    background-image: url('../Img/Hero.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
-    height: 90vh;
+    min-height: 85vh;
 }
 
-.overlay{
-    background: rgba(0,0,0,0.6);
-
-    height: 100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+.overlay {
+    background: rgba(0, 0, 0, 0.62);
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.card{
-    transition: 0.3s;
-    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
 }
 
-.card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0,0,0,.3);
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
 }
 
-.card-img-top{
-    height: 250px;
+
+.card-img-top {
+    height: 240px;
+    width: 100%;
     object-fit: cover;
+}
+
+.carousel-img {
+    height: 420px;
+    object-fit: cover;
+}
+
+.gallery-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Hover en enlaces y redes sociales */
+.social-links a {
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.social-links a:hover {
+    color: #ffc107 !important;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+.anim-fade-up {
+    animation: fadeUp 0.8s ease-out both;
+}
+
+.anim-pulse {
+    animation: gentlePulse 2.4s infinite ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .hero,
+    .overlay {
+        background-attachment: scroll;
+        min-height: 70vh;
+    }
+
+    .carousel-img {
+        height: 260px;
+    }
 }
